@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital India 2047 — Vision Landing Page</title>
+  <meta name="description" content="A single-scroll landing page showcasing a vision for Digital India in 2047: smart cities, inclusive education, health tech, green infrastructure and participatory governance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#081124;
+      --card:#0f1a2b;
+      --accent:linear-gradient(90deg,#00c2ff,#6f5aff);
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --maxw:1200px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color-scheme: dark;
+    }
+    *
+    {box-sizing:border-box
+    }
+    html,body
+    {
+        height:100%;
+        margin:0;
+        background:white;
+         
+          color:#00060d
+        }
+    a
+    {
+        color:inherit
+    }
+
+    
+    main
+    {
+        min-height:100vh;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:4rem;
+        padding:2rem 1rem;
+        max-width:var(--maxw);
+        margin:0 auto;
+    
+    }
+    section
+    {
+        width:100%;
+        min-height:100vh;
+        scroll-snap-align:start;
+        border-radius:14px;
+        padding:3rem;
+        display:grid;
+        grid-template-columns:1fr;
+        align-items:center;
+        gap:1.25rem;
+    }
+    body
+    {
+        scroll-behavior:smooth
+    }
+    
+
+    
+    header
+    {
+        position:fixed;
+        left:50%;
+        transform:translateX(-50%);
+        top:18px;
+        z-index:60;
+        width:calc(100% - 2rem);
+        max-width:var(--maxw);
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:10px;
+        border-radius:12px;
+        background:rgb(255, 255, 255);
+        backdrop-filter:blur(6px);
+        
+    
+    }
+
+    .pic
+    {
+        width:100%;
+    }
+    .logo
+    {
+        display:flex;
+        gap:10px;
+        align-items:center
+    }
+
+
+    .logo .mark
+    {
+        width:44px;
+        height:44px;
+        border-radius:10px;
+        background:rgb(9, 152, 224);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-weight:700
+    }
+
+
+    nav
+    {
+        display:flex;
+        gap:14px;
+        align-items:center
+    }
+
+    .btn
+    {
+        padding:8px 14px;
+        
+        background:rgba(255,255,255,0.03);
+        
+        cursor:pointer;
+        color:black;
+        list-style: none;
+
+    }
+
+  
+    .hero
+    {
+        display:grid; 
+        grid-template-columns:1fr 520px;
+        gap:2rem;
+        align-items:center;
+    }
+
+    .hero .headline
+    {
+        font-size:clamp(1.6rem,3.6vw,3rem);
+        line-height:1.02;
+        font-weight:800
+    
+    }
+
+    .hero p
+    {
+        opacity:0.9;
+        font-size:1.05rem
+    }
+
+    .hero .cta
+    {
+        display:flex;
+        gap:10px;
+        margin-top:18px
+    }
+
+    .glass-card
+    {
+        background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        padding:18px;
+        border-radius:14px;
+        border:1px solid rgba(255,255,255,0.04);
+        
+        box-shadow:0 8px 30px rgba(2,6,23,0.6)
+    }
+
+    
+    .features
+    {display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:18px
+    }
+    .card
+    {
+        padding:18px;
+        
+        border-radius:12px;
+        background:var(--glass-2);
+        min-height:120px}
+
+
+    .card h4
+    {
+        margin:8px 0 0
+    }
+
+    
+    .hero-visual
+    {
+        position:relative;
+        border-radius:12px;
+        height:420px;
+        overflow:hidden;
+    }
+    .hero-visual img
+    {
+        width:100%;
+        height:100%;
+    
+
+        
+    }
+
+    .button
+    {
+        background:rgb(13, 112, 242);
+        padding:10px;
+        font-size:15px;
+        cursor:pointer;
+    }
+
+    
+    
+
+
+    
+
+    
+ 
+
+    
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .hero-visual{height:320px}
+    }
+    @media (max-width:560px){
+      header{padding:8px}
+      .features{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      .hero-visual{height:220px}
+      section{padding:1.5rem}
+      .hero .headline{font-size:1.7rem}
+    }
+
+    
+    .reveal
+    {
+        opacity:0;
+        transform:translateY(18px) scale(0.995);
+        transition:all 700ms cubic-bezier(.2,.9,.25,1)}
+    .reveal.show
+    {
+        opacity:1;
+        transform:none}
+
+    
+    .muted
+    {
+        opacity:0.75;
+        font-size:0.95rem
+    }
+    .pill
+    {
+        display:inline-block;
+        padding:6px 10px;
+        border-radius:999px;
+        font-weight:600;
+        background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        border:1px solid rgba(255,255,255,0.03)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="mark">DI</div>
+      <div>
+        <div style="font-weight:700">Digital India 2047</div>
+        <div style="font-size:12px;opacity:0.6">Inclusive • Sustainable • Tech-First</div>
+      </div>
+    </div>
+    <nav>
+      <li class="btn">Home</li>
+      <li class="btn">Vision</li>
+      <li class="btn">Sectors</li>
+      <li class="btn">Gallery</li>
+      <li class="btn">Timeline</li>
+    </nav>
+  </header>
+
+  <div class="photo">
+    <img class="pic" src="images/d1.png">
+  </div>
+
+  <main>
+   
+    <section id="sec-0" class="hero reveal">
+      <div>
+        
+        <h1 class="headline">A connected, inclusive, and green Digital India — designed for everyone by 2047.</h1>
+        <p class="muted">Imagine government services that anticipate needs, schools that teach through mixed-reality, healthcare delivered to remote villages through AI & telemedicine, and cities powered by regenerative infrastructure. This is the vision we built for.</p>
+        <div class="cta">
+          <button class="button" onclick="scrollToSection(2)">Explore Sectors</button>
+          
+        </div>
+
+        <div style="margin-top:18px" class="features">
+          <div class="card glass-card">
+            <strong>Universal Connectivity</strong>
+            <p class="muted">Affordable, low-latency internet in every hamlet and high-speed mesh networks for towns.</p>
+          </div>
+          <div class="card glass-card">
+            <strong>e-Governance 2.0</strong>
+            <p class="muted">Citizen-first services with privacy-by-design, identity portability, and participatory budgeting.</p>
+          </div>
+          <div class="card glass-card">
+            <strong>Green Tech</strong>
+            <p class="muted">Smart microgrids, circular waste systems, and climate-adaptive urban planning at scale.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual glass-card">
+        <img src=images/p1.avif>
+      </div>
+    </section>
+
+    
+    <section id="sec-1" class="reveal">
+      <div style="max-width:980px;margin:0 auto;text-align:center">
+        <h2 style="margin:0 0 8px">Our Vision for 2047</h2>
+        <p class="muted">A society where technology amplifies human potential, closes opportunity gaps and restores ecosystems. Technology is a public good — secure, accountable and human-centred.</p>
+      </div>
+
+      <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center">
+        <div class="glass-card">
+          <h3>Education without barriers</h3>
+          <p class="muted">Adaptive learning platforms, AR classrooms, teacher networks and localized content in multiple languages enabling lifelong learning.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Healthcare at home</h3>
+          <p class="muted">Preventive AI diagnostics, remote monitoring, local telemedicine hubs and supply chains for last-mile medicines.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Transparent governance</h3>
+          <p class="muted">Open budgets, realtime performance dashboards, and neighborhood-level decision tools backed by secure identity.</p>
+        </div>
+        <div class="glass-card">
+          <h3>Smart & sustainable cities</h3>
+          <p class="muted">Data-informed transit, pedestrian-priority streets, urban farming and decentralized energy systems.</p>
+        </div>
+      </div>
+    </section>
+
+    
+   
+
+  <script>
+    
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); })
+    }, {threshold: 0.12});
+    reveals.forEach(r=>obs.observe(r));
+
+    
+    const heroImg = document.querySelector('.hero-visual img');
+    window.addEventListener('scroll',()=>{
+      if(!heroImg) return;
+      const rect = heroImg.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      const visible = Math.max(0, Math.min(1, (windowH - rect.top) / (windowH + rect.height)));
+      heroImg.style.transform = `scale(${1 + visible*0.03}) translateY(${ -visible*12 }px)`;
+    }, {passive:true});
+
+   
+    function scrollToSection(i){
+      const sections = ['sec-0','sec-1','sec-2','sec-3','sec-4','sec-5'];
+      const id = sections[i] || sections[0];
+      document.getElementById(id).scrollIntoView({behavior:'smooth'});
+    }
+
+   
+    function openModal(){ document.getElementById('modal').style.display='flex' }
+    function closeModal(){ document.getElementById('modal').style.display='none' }
+
+    
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal() })
+  </script>
+</body>
+</html>
