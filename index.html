@@ -142,10 +142,8 @@
 
     .hero .headline
     {
-        font-size:clamp(1.6rem,3.6vw,3rem);
-        line-height:1.02;
-        font-weight:800
-    
+       font-size:45px;
+       width:100%; 
     }
 
     .hero p
@@ -175,15 +173,17 @@
     .features
     {display:grid;
         grid-template-columns:repeat(3,1fr);
-        gap:18px
+        gap:50px
     }
     .card
     {
-        padding:18px;
+        
+        width:120%;
+        margin:10%;
         
         border-radius:12px;
         background:var(--glass-2);
-        min-height:120px}
+    }
 
 
     .card h4
@@ -199,10 +199,13 @@
         height:420px;
         overflow:hidden;
     }
-    .hero-visual img
+    .mainpic
     {
-        width:100%;
+        width:120%;
         height:100%;
+        margin-top:-50%;
+        margin-left:10%;
+        border-radius: 10px;
     
 
         
@@ -318,8 +321,8 @@
         </div>
       </div>
 
-      <div class="hero-visual glass-card">
-        <img src=images/p1.avif>
+      <div class="headpic">
+        <img src=images/d2.jpg class="mainpic">
       </div>
     </section>
 
@@ -362,28 +365,12 @@
     reveals.forEach(r=>obs.observe(r));
 
     
-    const heroImg = document.querySelector('.hero-visual img');
-    window.addEventListener('scroll',()=>{
-      if(!heroImg) return;
-      const rect = heroImg.getBoundingClientRect();
-      const windowH = window.innerHeight;
-      const visible = Math.max(0, Math.min(1, (windowH - rect.top) / (windowH + rect.height)));
-      heroImg.style.transform = `scale(${1 + visible*0.03}) translateY(${ -visible*12 }px)`;
-    }, {passive:true});
-
-   
-    function scrollToSection(i){
-      const sections = ['sec-0','sec-1','sec-2','sec-3','sec-4','sec-5'];
-      const id = sections[i] || sections[0];
-      document.getElementById(id).scrollIntoView({behavior:'smooth'});
-    }
-
-   
-    function openModal(){ document.getElementById('modal').style.display='flex' }
-    function closeModal(){ document.getElementById('modal').style.display='none' }
-
     
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal() })
+ 
+    
+
+   
+  
   </script>
 </body>
 </html>
