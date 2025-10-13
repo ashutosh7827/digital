@@ -1,414 +1,585 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Digital India 2047</title>
- 
-  
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#081124;
-      --card:#0f1a2b;
-      --accent:linear-gradient(90deg,#00c2ff,#6f5aff);
-      --glass: rgba(255,255,255,0.04);
-      --glass-2: rgba(255,255,255,0.02);
-      --maxw:1200px;
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      color-scheme: dark;
-    }
-    *
-    {box-sizing:border-box
-    }
-    html,body
-    {
-        height:100%;
-        margin:0;
-        background:white;
-         
-          color:#00060d
-        }
-    a
-    {
-        color:inherit
-    }
-
-    
-    main
-    {
-        min-height:100vh;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        gap:4rem;
-        padding:2rem 1rem;
-        max-width:var(--maxw);
-        margin:0 auto;
-    
-    }
-    section
-    {
-        width:100%;
-        min-height:100vh;
-        scroll-snap-align:start;
-        border-radius:14px;
-        padding:3rem;
-        display:grid;
-        grid-template-columns:1fr;
-        align-items:center;
-        gap:1.25rem;
-    }
-    body
-    {
-        scroll-behavior:smooth
-    }
-    
-
-    
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital India 2047 - A Vision Transformed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f8f8f8;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #0a3d62;
-  padding: 10px 20px;
-  color: #fff;
-  position: relative;
+h1, h2, h3 {
+    color: #004d7a; /* Darker blue for headings */
+    margin-bottom: 20px;
 }
 
-.india {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-right:65%;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #f8c291;
-}
-
-
-.menu-icon {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-
-#menu-toggle {
-  display: none;
-}
-
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: #0a3d62;
-    flex-direction: column;
+h2 {
+    font-size: 2.5em;
     text-align: center;
-    padding: 10px 0;
-  }
+    margin-bottom: 40px;
+    position: relative;
+}
 
-  .nav-links a {
+h2::after {
+    content: '';
     display: block;
-    padding: 10px 0;
-  }
+    width: 60px;
+    height: 3px;
+    background-color: #ffcc00;
+    margin: 10px auto 0;
+}
 
-  #menu-toggle:checked + .menu-icon + .nav-links {
+/* Global Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: #eef4f8; /* Lighter background for alternate sections */
+}
+
+/* Header & Navigation */
+header {
+    background-color: #055a92; /* Digital India Blue */
+    color: white;
+    padding: 15px 5%;
     display: flex;
-  }
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-  .menu-icon {
-    display: block;
-  }
+.logo {
+    font-size: 1.7em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s, transform 0.2s;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #ffcc00; /* Accent Yellow */
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none; /* Hide on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 5px;
 }
 
 
-    .pic
-    {
-        width:100%;
+.hero {
+    background: url(images/h1.jpg);
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-content h1 {
+    font-size: 3.8em;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow:white;
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #004d7a;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px; /* Pill shape */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    background-color: #e0b400;
+    transform: translateY(-3px);
+}
+
+/* Vision Section */
+.section-vision .vision-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-vision .vision-text {
+    flex: 1;
+}
+
+.section-vision .vision-image {
+    flex: 1;
+    text-align: center;
+}
+
+.section-vision .vision-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stats-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+}
+
+.stat-box {
+    background-color:rgb(1, 46, 66);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-box span {
+    font-size: 3em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Pillars Section */
+.pillar-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+}
+
+.pillar-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+}
+
+.pillar-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.pillar-card h3 {
+    color: #007bb5;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* Innovations Section */
+.innovation-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+}
+
+.innovation-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.innovation-item:hover {
+    transform: translateY(-5px);
+}
+
+.innovation-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.innovation-item h3 {
+    margin-top: 15px;
+    color: #007bb5;
+    font-size: 1.4em;
+}
+
+.innovation-item p {
+    padding: 0 20px 20px;
+    font-size: 0.95em;
+}
+
+/* Impact Section */
+.section-impact .impact-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.section-impact .impact-image {
+    flex: 1;
+    text-align: center;
+}
+
+.section-impact .impact-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-impact .impact-text {
+    flex: 1;
+}
+
+.section-impact .impact-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.section-impact .impact-text ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="%23007bb5"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') no-repeat left center;
+    background-size: 18px;
+    padding-left: 28px;
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+.section-contact {
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form .cta-button {
+    align-self: center;
+    width: fit-content;
+    margin-top: 10px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.8em;
     }
-    .logo
-    {
-        display:flex;
-        gap:10px;
-        align-items:center
+    h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+    .hero {
+        height: 350px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
     }
 
-
-    .logo .mark
-    {
-        width:44px;
-        height:44px;
-        border-radius:10px;
-        background:rgb(9, 152, 224);
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        font-weight:700
+    /* Header/Navigation adjustments for small screens */
+    .navbar {
+        display: none; /* Hide standard nav */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 65px; /* Below the header */
+        left: 0;
+        background-color: #007bb5;
+        padding-bottom: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
 
-
-    nav
-    {
-        display:flex;
-        gap:14px;
-        align-items:center
+    .navbar.active {
+        display: flex; /* Show when active/menu is toggled */
     }
 
-    .btn
-    {
-        padding:8px 14px;
-        
-        background:rgba(255,255,255,0.03);
-        
-        cursor:pointer;
-        color:black;
-        list-style: none;
-
+    .navbar a {
+        margin: 10px 0;
+        padding: 10px 5%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
     }
 
-  
-    .hero
-    {
-        display:grid; 
-        grid-template-columns:1fr 520px;
-        gap:2rem;
-        align-items:center;
+    .navbar a:last-child {
+        border-bottom: none;
     }
 
-    .hero .headline
-    {
-       font-size:45px;
-       width:100%; 
+    .menu-toggle {
+        display: block; /* Show the hamburger icon */
     }
 
-    .hero p
-    {
-        opacity:0.9;
-        font-size:1.05rem
+    /* Grid layouts become a single column */
+    .stats-grid, .pillar-grid, .innovation-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
     }
 
-    .hero .cta
-    {
-        display:flex;
-        gap:10px;
-        margin-top:18px
+    .section-vision .vision-content,
+    .section-impact .impact-content {
+        flex-direction: column; /* Stack image and text */
+        text-align: center;
     }
 
-    .glass-card
-    {
-        background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-        padding:18px;
-        border-radius:14px;
-        border:1px solid rgba(255,255,255,0.04);
-        
-        box-shadow:0 8px 30px rgba(2,6,23,0.6)
+    .section-vision .vision-image,
+    .section-impact .impact-image {
+        order: -1; /* Image appears above text on mobile */
+        margin-bottom: 30px;
     }
 
-    
-    .features
-    {display:grid;
-        grid-template-columns:repeat(3,1fr);
-        gap:50px
-    }
-    .card
-    {
-        
-        width:120%;
-        margin:10%;
-        
-        border-radius:12px;
-        background:var(--glass-2);
+    .container {
+        padding: 40px 0; /* Less padding on mobile */
     }
 
+    .stat-box {
+    background-color: #02608b;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px solid black;
+    transition: transform 0.3s ease;
+}
 
-    .card h4
-    {
-        margin:8px 0 0
-    }
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+}
 
-    
-    .hero-visual
-    {
-        position:relative;
-        border-radius:12px;
-        height:420px;
-        overflow:hidden;
-    }
-    .mainpic
-    {
-        width:120%;
-        height:100%;
-        margin-top:-50%;
-        margin-left:10%;
-        border-radius: 10px;
-    
-
-        
-    }
-
-    .button
-    {
-        background:rgb(13, 112, 242);
-        padding:10px;
-        font-size:15px;
-        cursor:pointer;
-    }
-
-    
-    .reveal
-    {
-        opacity:0;
-        transform:translateY(18px) scale(0.995);
-        transition:all 700ms cubic-bezier(.2,.9,.25,1)}
-    .reveal.show
-    {
-        opacity:1;
-        transform:none}
-
-    
-    .muted
-    {
-        opacity:0.75;
-        font-size:0.95rem
-    }
-    .pill
-    {
-        display:inline-block;
-        padding:6px 10px;
-        border-radius:999px;
-        font-weight:600;
-        background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
-        border:1px solid rgba(255,255,255,0.03)}
-  </style>
-</head>
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
 <body>
-  <header>
-    <div class="logo">
-      <div class="mark">DI</div>
-      </div>
-    <div class="india">Digital India 2047</div>
-    
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
 
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </nav>
-  
-  </header>
+    <header>
+        <div class="logo">Digital India 2047</div>
+        <nav class="navbar">
+            <a href="#vision">Vision</a>
+            <a href="#pillars">Pillars</a>
+            <a href="#innovations">Innovations</a>
+            <a href="#impact">Impact</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </header>
 
-  <div class="photo">
-    <img class="pic" src="images/d1.png">
-  </div>
-
-  <main>
-   
-    <section id="sec-0" class="hero reveal">
-      <div>
-        
-        <h1 class="headline">A connected, inclusive, and green Digital India — designed for everyone by 2047.</h1>
-        <p class="muted">Imagine government services that anticipate needs, schools that teach through mixed-reality, healthcare delivered to remote villages through AI & telemedicine, and cities powered by regenerative infrastructure. This is the vision we built for.</p>
-        <div class="cta">
-          <button class="button" onclick="scrollToSection(2)">Explore Sectors</button>
-          
+    <section class="hero">
+        <div class="hero-content">
+            <h1>India: A Global Digital Powerhouse</h1>
+            <p>Empowering a billion dreams through advanced technology and inclusive growth.</p>
+            <a href="#vision" class="cta-button">Explore the Vision</a>
         </div>
-
-        <div style="margin-top:18px" class="features">
-          <div class="card glass-card">
-            <strong>Universal Connectivity</strong>
-            <p class="muted">Affordable, low-latency internet in every hamlet and high-speed mesh networks for towns.</p>
-          </div>
-          <div class="card glass-card">
-            <strong>e-Governance 2.0</strong>
-            <p class="muted">Citizen-first services with privacy-by-design, identity portability, and participatory budgeting.</p>
-          </div>
-          <div class="card glass-card">
-            <strong>Green Tech</strong>
-            <p class="muted">Smart microgrids, circular waste systems, and climate-adaptive urban planning at scale.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="headpic">
-        <img src=images/d2.jpg class="mainpic">
-      </div>
     </section>
 
-    
-    <section id="sec-1" class="reveal">
-      <div style="max-width:980px;margin:0 auto;text-align:center">
-        <h2 style="margin:0 0 8px">Our Vision for 2047</h2>
-        <p class="muted">A society where technology amplifies human potential, closes opportunity gaps and restores ecosystems. Technology is a public good — secure, accountable and human-centred.</p>
-      </div>
-
-      <div style="margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center">
-        <div class="glass-card">
-          <h3>Education without barriers</h3>
-          <p class="muted">Adaptive learning platforms, AR classrooms, teacher networks and localized content in multiple languages enabling lifelong learning.</p>
+    <section id="vision" class="container section-vision">
+        <h2>Our Vision for 2047</h2>
+        <div class="vision-content">
+            <div class="vision-text">
+                <p>A truly digitally empowered society and a vibrant knowledge economy. By 2047, India will be a leader in technological innovation, ensuring digital access, literacy, and opportunities for every citizen.</p>
+                <p>We envision a nation where technology seamlessly integrates into daily life, driving sustainable development, enhancing governance, and fostering an environment of innovation and entrepreneurship.</p>
+            </div>
+            <div class="vision-image">
+                <img src="images/p2.jpg">
+            </div>
         </div>
-        <div class="glass-card">
-          <h3>Healthcare at home</h3>
-          <p class="muted">Preventive AI diagnostics, remote monitoring, local telemedicine hubs and supply chains for last-mile medicines.</p>
+        <div class="stats-grid">
+            <div class="stat-box"><span>100%</span><p>Digital Services Adoption</p></div>
+            <div class="stat-box"><span>AI-Powered</span><p>Governance</p></div>
+            <div class="stat-box"><span>Global</span><p>Tech Innovation Hub</p></div>
         </div>
-        <div class="glass-card">
-          <h3>Transparent governance</h3>
-          <p class="muted">Open budgets, realtime performance dashboards, and neighborhood-level decision tools backed by secure identity.</p>
-        </div>
-        <div class="glass-card">
-          <h3>Smart & sustainable cities</h3>
-          <p class="muted">Data-informed transit, pedestrian-priority streets, urban farming and decentralized energy systems.</p>
-        </div>
-      </div>
     </section>
 
-    
-   
+    <section id="pillars" class="container bg-light section-pillars">
+        <h2>The Three Core Pillars of Digital India 2047</h2>
+        <div class="pillar-grid">
+            <div class="pillar-card">
+                <img src="images/p3.avif">
+                <h3>1. Digital Infrastructure as a Core Utility</h3>
+                <p>Ensuring high-speed internet, secure data centers, and universal connectivity across rural and urban landscapes, making digital resources as fundamental as water and electricity.</p>
+            </div>
+            <div class="pillar-card">
+                <img src="images/p4.jpeg">
+                <h3>2. Governance and Services On Demand</h3>
+                <p>Revolutionizing public services through AI, blockchain, and cloud technologies for seamless, transparent, and efficient delivery, accessible from any device, anywhere, anytime.</p>
+            </div>
+            <div class="pillar-card">
+                <img src="images/p5.jpg">
+                <h3>3. Digital Empowerment of Citizens</h3>
+                <p>Achieving universal digital literacy, fostering a culture of cybersecurity awareness, and enabling citizens to actively participate in the digital economy and decision-making processes.</p>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); })
-    }, {threshold: 0.12});
-    reveals.forEach(r=>obs.observe(r));
+    <section id="innovations" class="container section-innovations">
+        <h2>Next-Gen Innovations Driving Digital India</h2>
+        <div class="innovation-grid">
+            <div class="innovation-item">
+                <img src="images/p6.png">
+                <h3>Artificial Intelligence & ML</h3>
+                <p>Transforming industries, healthcare, agriculture, and education with intelligent systems for better outcomes and efficiency.</p>
+            </div>
+            <div class="innovation-item">
+                <img src="images/p7.jpg">
+                <h3>Blockchain & Decentralization</h3>
+                <p>Ensuring secure transactions, transparent land records, and verifiable digital identities, building trust in the digital realm.</p>
+            </div>
+            <div class="innovation-item">
+                <img src="images/p8.jpg">
+                <h3>IoT & Smart Cities</h3>
+                <p>Creating intelligent urban environments with connected devices for improved living, efficient resource management, and enhanced public safety.</p>
+            </div>
+        </div>
+    </section>
 
-    
-    
- 
-    
+    <section id="impact" class="container bg-light section-impact">
+        <h2>Impact & Future Growth</h2>
+        <div class="impact-content">
+            <div class="impact-image">
+                <img src="images/p9.jpg">
+            </div>
+            <div class="impact-text">
+                <p>Digital India 2047 will catalyze unprecedented economic growth, create millions of jobs, and significantly improve the quality of life for all citizens. It will foster an inclusive environment where technology bridges divides, empowers the marginalized, and positions India as a global leader in the digital age.</p>
+                <ul>
+                    <li>Enhanced healthcare access and delivery.</li>
+                    <li>Personalized education for every learner.</li>
+                    <li>Sustainable agricultural practices.</li>
+                    <li>A thriving digital economy.</li>
+                    <li>Stronger national security and data privacy.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-   
-  
-  </script>
+    <section id="contact" class="container section-contact">
+        <h2>Join the Digital India Movement</h2>
+        <p>Have ideas, suggestions, or want to contribute? Connect with us!</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2047 Digital India Initiative. | Forging a Digitally Transformed Nation.</p>
+    </footer>
+
+    <script>document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    // Toggle navigation menu visibility when the button is clicked
+    menuToggle.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+    });
+
+    // Close the menu when a link is clicked (useful for single-page sites)
+    const navLinks = document.querySelectorAll('.navbar a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+            }
+        });
+    });
+});</script>
 </body>
 </html>
